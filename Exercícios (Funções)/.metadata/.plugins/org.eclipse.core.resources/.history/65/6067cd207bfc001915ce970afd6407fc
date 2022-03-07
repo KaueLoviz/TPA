@@ -1,0 +1,60 @@
+import java.util.Scanner;
+public class Funções {
+	public static void main(String[]args) {
+		Scanner in=new Scanner(System.in);
+		int res;
+		while(true) {
+			System.out.println("Digite 1 para FATORAR || Digite 2 para TABUADA || Digite 3 para APOSENTAR || Digite 4 para POTENCIALIZAR || Digite 0 para DESLIGAR");
+			res=in.nextInt();
+			if(res==0) {
+				break;
+			}
+			if(res==1) {
+				int n=0;
+				System.out.println("Digite um número a ser fatorado:");
+				System.out.println(fat(n));
+			}
+			if(res==2) {
+				int n;
+				n=in.nextInt();
+				System.out.println("Digite o número a ser tabuado:");
+				fat(n);
+			}
+		}
+	}
+	
+	//FATORIAL
+	public static int fat(int v1) {
+		Scanner in=new Scanner(System.in);
+		int n, i=1, f=1; 
+		n=in.nextInt();
+		while (i<=n) {
+			f=f*i;
+			i++;
+		}
+		return f;
+	}
+	
+	//TABUADA
+	public static void tab(int n) {
+		for(int i=1; i<=10; i++) {
+			System.out.println(n+" X "+" = "+n*i);
+		}
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

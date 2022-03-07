@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class D {
+	public static void main(String[]args) {
+		Scanner ler=new Scanner(System.in);
+		int m[][]=new int[4][4];
+		int val[]=new int[16];
+		int i, j, cont=0, k=0, x, win=0, a=0;
+		
+		
+		
+		for(a=0; a<16; a++) {
+			val[a]=(int)((Math.random()*74)+1);
+			System.out.print(val[a]+" ");
+			for(i=0; i<16; i++) {
+				for(j=0; j<16; j++) {
+					if(val[i]==val[j]) {
+						cont++;
+					}
+				}
+			}
+			System.out.println("      !"+cont);
+		}
+		
+		
+		
+	}
+}

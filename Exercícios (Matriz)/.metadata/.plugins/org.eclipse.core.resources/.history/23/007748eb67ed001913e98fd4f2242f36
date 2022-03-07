@@ -1,0 +1,61 @@
+import java.lang.*;
+
+public class D {
+	public static void main(String[] args) {
+		int bingo[][]=new int [4][4],cartela[][]=new int[4][4],vetor[]=new int [17],cont=0,bin=0, i=0, j=0, x=0;
+		boolean verific = true;
+		//Criando os numeros do bingo.
+		for( i=0;i<17;i++) {
+			vetor[i] = (int)(Math.random()*76)+1;
+		}
+		//Criando a cartela do bingo.
+		for(i=0,x=0;i<4;i++) {
+			for( j=0;j<4;j++,x++) {
+				bingo[i][j]=vetor[x];
+			}
+		}
+		for(i=0; i<=3; i++) {
+			for(j=0; j<=3; j++) {
+				System.out.print("[ "+bingo[i][j]+" ]");
+				if(j==3) {
+					System.out.print("\n");
+				}
+			}
+		}
+		//verificando se a tabela do mano é igual a do bingo
+		while(verific = true) {
+			//criando cartela do mano.
+			for(i=0,x=0;i<4;i++) {
+				for(j=0;j<4;j++,x++) {
+					cartela[i][j]=vetor[(int)(Math.random()*16)];
+				}
+				if(verific == false)break;
+			}
+			for(i=0,x=0;i<4;i++) {
+				for(j=0;j<4;j++,x++) {
+					if(cartela[i][j] == bingo[i][j]) {
+						bin++;
+					}else {
+						cont++;
+					}
+				}
+				if(bin==16) {
+					System.out.println("BINGO!");
+					System.out.println("VOCE VENCEU DEPOIS DE "+cont+" RODADAS!");
+					verific = false;
+					break;
+				}
+				if(verific == false)break;
+			}
+			for(i=0; i<=3; i++) {
+				for(j=0; j<=3; j++) {
+					System.out.print("[ "+cartela[i][j]+" ]");
+					if(j==3) {
+						System.out.print("\n");
+					}
+				}
+			}
+			if(verific == false)break;
+		}
+	}
+}

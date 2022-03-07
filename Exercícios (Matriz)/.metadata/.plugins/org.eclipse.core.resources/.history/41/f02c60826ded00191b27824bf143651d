@@ -1,0 +1,65 @@
+import java.util.Scanner;
+public class D {
+	public static void main(String[]args) {
+		Scanner ler=new Scanner(System.in);
+		int m[][]=new int[4][4];
+		int num[]=new int[16];
+		int i=0, j, cont=0, k=0, x, win=0, help=0, a;
+		for(a=0;i<num.length;a++){
+			int randomico=(int)((Math.random()*74)+1);
+			boolean existe=false;
+			for(int grr=0;grr<a;grr++){
+				if(num[grr]==randomico){
+					existe=true;
+					break;
+				}
+				else{
+					existe=false;
+				}
+			} 
+			if(!existe){
+				num[a]=randomico; 
+				System.out.println(num[a]);
+			}
+			else{
+				i--;
+			}
+        }
+		for(i=0, help=0; i<=3; i++, help++) {
+			for(j=0; j<=3; j++) {
+				m[i][j]=num[a];
+			}
+		}
+		for(i=0; i<=3; i++) {
+			for(j=0; j<=3; j++) {
+				System.out.print("[ "+m[i][j]+" ]");
+				if(j==3) {
+					System.out.print("\n");
+				}
+			}
+		}
+		System.out.println(" ");
+		while(k==0) {
+			System.out.println("Cante um número:");
+			x=ler.nextInt();
+			for(i=0; i<=3; i++) {
+				for(j=0; j<=3; j++) {
+					if(x==m[i][j]) {
+						win++;
+					}
+				}
+			}
+			if(win==16) {
+				k+=1;
+			}
+			else {
+				k+=0;
+			}
+			cont++;
+		}
+			System.out.println("------");
+			System.out.println("BINGO!");
+			System.out.println("------");
+			System.out.println("O jogador conseguiu no "+cont+"º número");
+	}
+}

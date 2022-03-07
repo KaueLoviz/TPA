@@ -1,0 +1,19 @@
+public class B {
+	public static void main(String[]args) {
+		int m[][]=new int[3][3];
+		int i, j;
+		for(i=0; i<=2; i++) {
+			for(j=0; j<=2; j++) {
+				m[i][j]=(int)(Math.random()*30);
+			}
+		}
+		for(i=0; i<=2; i++) {
+			for(j=0; j<=2; j++) {
+				System.out.print("[ "+m[i][j]+" ]");
+				if(j==2) {
+					System.out.print("\n");
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class Ex2 {
+	public static void main (String [] args) {
+		Scanner ler = new Scanner (System.in);
+		double tg;
+		int op;
+		System.out.println("Digite o total de gastos:");
+		tg=ler.nextDouble();
+		System.out.println("Escolha uma opção:");
+		System.out.println("Opção 1: a vista com 10% de desconto.");
+		System.out.println("Opção 2: em duas vezes (Preço da etiqueta).");
+		System.out.println("Opção 3: de três até 10 vezes com 3% de júros ao mês (Somente para compras acima de R$100,00).");
+		op=ler.nextInt();
+		if(op==1) {
+				System.out.println("Você escolheu a opção 1.");
+				System.out.println("O valor a vista de sua prestação será de: R$"+op1(tg));
+		}
+		if(op==2) {
+				
+		}
+		if(op==3) {
+	
+		}
+	}
+	public static double op1(double v1) {
+		double resultado, por;
+		por=v1*10/100;
+		resultado=v1-por;
+		return resultado;
+	}
+}
